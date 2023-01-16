@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic';
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 export default function Chart({ data }) {
-    const stateInit = {
+    const chartData = {
         series: [{
             data: data
         }],
@@ -46,7 +46,7 @@ export default function Chart({ data }) {
             xaxis: {
                 categories: [
                     ["Nb d'actes"],
-                    ["Nb de vaccinations"],
+                    ["Nb de vacation"],
                     ["Nb de consultations"],
                     ["Nb d'examens"],
                 ],
@@ -58,7 +58,6 @@ export default function Chart({ data }) {
             }
         },
     };
-    const [chartData, setChartData] = useState(stateInit);
 
     return (
         <ReactApexChart width={700} options={chartData.options} series={chartData.series} type="bar" height={350} />
