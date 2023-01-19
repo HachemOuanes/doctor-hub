@@ -5,7 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        icpc: '#eb0a8c',
+      }
+    },
   },
   plugins: [],
 }
